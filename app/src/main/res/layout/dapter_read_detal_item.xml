@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:gravity="center_vertical"
+    android:orientation="vertical"
+    tools:ignore="UnusedAttribute">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="3dp"
+        android:padding="5dp"
+        app:cardCornerRadius="20dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="vertical"
+            android:layout_marginLeft="2dp"
+            android:layout_marginStart="2dp">
+
+          <RelativeLayout
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:layout_marginTop="5dp">
+
+              <TextView
+                  android:id="@+id/read_detail_item_name"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:fontFamily="sans-serif"
+                  android:tag="text_color|secondary_text,text_size|body"
+                  android:layout_marginLeft="15dp"
+                  android:layout_marginStart="15dp"
+                  tools:text="姓名" />
+
+              <TextView
+                  android:id="@+id/read_detail_item_gander"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_toRightOf="@+id/read_detail_item_name"
+                  android:layout_toEndOf="@+id/read_detail_item_name"
+                  android:fontFamily="sans-serif"
+                  android:tag="text_color|secondary_text,text_size|body"
+                  android:layout_marginLeft="15dp"
+                  android:layout_marginStart="15dp"
+                  tools:text="gander" />
+
+              <TextView
+                  android:id="@+id/record_detail_item_character"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_below="@+id/read_detail_item_name"
+                  android:fontFamily="sans-serif"
+                  android:tag="text_color|secondary_text,text_size|body"
+                  android:layout_marginTop="5dp"
+                  android:layout_marginLeft="25dp"
+                  android:layout_marginStart="25dp"
+                  android:text="@string/record_figure_character" />
+
+              <TextView
+                  android:id="@+id/record_detail_item_character_content"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_below="@+id/record_detail_item_character"
+                  android:fontFamily="sans-serif"
+                  android:tag="text_size|body"
+                  android:textColor="@android:color/black"
+                  android:layout_marginTop="5dp"
+                  android:layout_marginLeft="40dp"
+                  android:layout_marginStart="40dp" />
+
+              <TextView
+                  android:id="@+id/record_detail_item_thing"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_below="@+id/record_detail_item_character_content"
+                  android:fontFamily="sans-serif"
+                  android:tag="text_color|secondary_text,text_size|body"
+                  android:layout_marginTop="5dp"
+                  android:layout_marginLeft="25dp"
+                  android:layout_marginStart="25dp"
+
+                  android:text="@string/record_figure_thing" />
+
+              <TextView
+                  android:id="@+id/record_detail_item_thing_content"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_below="@+id/record_detail_item_thing"
+                  android:fontFamily="sans-serif"
+                  android:tag="text_size|body"
+                  android:textColor="@android:color/black"
+                  android:layout_marginTop="5dp"
+                  android:layout_marginLeft="40dp"
+                  android:layout_marginStart="40dp" />
+
+              <ImageButton
+                  android:id="@+id/edit_image_delete"
+                  android:layout_width="30dp"
+                  android:layout_height="30dp"
+                  android:layout_alignParentTop="true"
+                  android:layout_marginTop="4dp"
+                  android:layout_marginBottom="3dp"
+                  android:layout_marginEnd="40dp"
+                  android:layout_marginRight="15dp"
+                  android:scaleType="fitCenter"
+                  android:background="@drawable/delete"
+                  android:layout_alignParentRight="true"
+                  android:layout_alignParentEnd="true" />
+          </RelativeLayout>
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+</LinearLayout>

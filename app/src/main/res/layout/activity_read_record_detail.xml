@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/layout_main_top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:background="@color/colorAccentDarkDefault"
+        android:minHeight="60dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="8dp">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/iv_detail_headportrait"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_centerVertical="true"
+            android:src="@mipmap/ic_launcher_cyq_round"
+            app:civ_border_color="#DCDCDC"
+            app:civ_border_width="2dp" />
+
+        <TextView
+            android:id="@+id/tv_detail_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="40dp"
+            android:layout_toRightOf="@id/iv_main_headportrait"
+            android:text="@string/read_record_title"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:layout_marginStart="40dp"
+            android:layout_toEndOf="@id/iv_main_headportrait" />
+
+        <RelativeLayout
+            android:id="@+id/iv_detail_plus"
+            android:layout_width="50dp"
+            android:layout_height="57dp"
+            android:layout_alignParentRight="true"
+            android:gravity="center"
+            android:layout_alignParentEnd="true">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/selector_plus"
+                android:layout_alignParentEnd="true" />
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <com.claritynotes.widgets.LinedEditText
+        android:id="@+id/edit_diary_et_chapter"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@drawable/shape_add_diary_title"
+        android:enabled="true"
+        android:gravity="top"
+        android:maxLines="1"
+        android:minLines="1"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:hint="@string/edit_diary_et_chapter"
+        android:scrollbars="none" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/read_record_detail_rv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+</LinearLayout>

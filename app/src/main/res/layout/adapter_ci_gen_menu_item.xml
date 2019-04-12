@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:textSize="25sp"
+    android:background="#ef0b0b"
+    android:textColor="#fff"
+    android:text="@string/delete"
+    android:gravity="center"
+    android:paddingLeft="25dp"
+    android:paddingRight="25dp">
+
+
+</TextView>

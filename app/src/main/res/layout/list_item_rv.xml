@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:gravity="center_vertical"
+    android:orientation="vertical"
+    tools:ignore="UnusedAttribute">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:padding="5dp"
+        app:cardCornerRadius="20dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="vertical"
+                android:layout_marginLeft="17dp"
+                android:layout_marginStart="17dp">
+
+                <TextView
+                    android:id="@+id/phrase_or_words"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif"
+                    android:tag="text_color|accent_color,font|RobotoSlab-Bold.ttf,text_size|subheading"
+                    tools:text="Primary Text" />
+
+                <TextView
+                    android:id="@+id/yin_biao"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif"
+                    android:tag="text_color|secondary_text,text_size|body"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginStart="15dp"
+                    tools:text="Secondary Text" />
+
+                <TextView
+                    android:id="@+id/translation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif"
+                    android:tag="text_color|secondary_text,text_size|body"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginStart="15dp"
+                    tools:text="Secondary Text" />
+
+
+                <TextView
+                    android:id="@+id/example_sentence"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginLeft="15dp"
+                    android:fontFamily="sans-serif"
+                    android:tag="text_color|secondary_text,text_size|body"
+                    tools:text="Secondary Text" />
+
+                <TextView
+                    android:id="@+id/list_item_record_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif"
+                    android:tag="text_color|secondary_text,text_size|body"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginBottom="8dp"
+                    android:layout_gravity="bottom|right"
+                    tools:text="Secondary Text" />
+            </LinearLayout>
+
+            <ImageButton
+                android:id="@+id/edit_image_delete"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="3dp"
+                android:layout_marginEnd="40dp"
+                android:layout_marginRight="15dp"
+                android:scaleType="fitCenter"
+                android:background="@drawable/delete"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true" />
+
+        </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
+</LinearLayout>

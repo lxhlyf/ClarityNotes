@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.claritynotes.widgets.SlideItemLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="70dp"
+    android:id="@+id/slide_layout">
+
+    <include android:id="@+id/item_content"
+        layout="@layout/adapter_ci_gen_item"/>
+
+    <include
+        android:id="@+id/item_menu"
+        layout="@layout/adapter_ci_gen_menu_item"
+        android:layout_marginBottom="2dp"
+        android:layout_height="match_parent"
+        android:layout_width="wrap_content" />
+
+</com.claritynotes.widgets.SlideItemLayout>
