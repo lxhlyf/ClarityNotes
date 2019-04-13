@@ -17,60 +17,57 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp">
 
-            <LinearLayout
+            <TextView
+                android:id="@+id/adapter_list_sentence"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="17dp"
-                android:layout_marginLeft="17dp"
-                android:gravity="center_vertical"
-                android:orientation="vertical">
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:fontFamily="sans-serif"
+                android:tag="text_color|accent_color,font|RobotoSlab-Bold.ttf,text_size|subheading"
+                tools:text="Primary Text"
+                android:layout_marginStart="5dp" />
 
-                <TextView
-                    android:id="@+id/adapter_list_sentence"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="sans-serif"
-                    android:tag="text_color|accent_color,font|RobotoSlab-Bold.ttf,text_size|subheading"
-                    tools:text="Primary Text" />
+            <TextView
+                android:id="@+id/adapter_list_book_source"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/adapter_list_sentence"
+                android:layout_marginTop="8dp"
+                android:layout_marginLeft="20dp"
+                android:fontFamily="sans-serif"
+                android:tag="text_color|secondary_text,text_size|body"
+                tools:text="Secondary Text"
+                android:layout_marginStart="20dp" />
 
-                <TextView
-                    android:id="@+id/adapter_list_book_source"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="15dp"
-                    android:layout_marginLeft="15dp"
-                    android:fontFamily="sans-serif"
-                    android:tag="text_color|secondary_text,text_size|body"
-                    tools:text="Secondary Text" />
-
-                <TextView
-                    android:id="@+id/adapter_record_time"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="sans-serif"
-                    android:tag="text_color|secondary_text,text_size|body"
-                    android:layout_gravity="bottom|right"
-                    android:layout_marginBottom="8dp"
-                    android:layout_marginEnd="15dp"
-                    tools:text="Secondary Text"
-                    android:layout_marginRight="15dp" />
-            </LinearLayout>
+            <TextView
+                android:id="@+id/adapter_record_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_toLeftOf="@+id/edit_image_delete"
+                android:layout_marginRight="50dp"
+                android:layout_alignTop="@+id/edit_image_delete"
+                android:fontFamily="sans-serif"
+                android:tag="text_color|secondary_text,text_size|body"
+                tools:text="Secondary Text"
+                android:layout_toStartOf="@+id/edit_image_delete"
+                android:layout_marginEnd="50dp" />
 
             <ImageButton
                 android:id="@+id/edit_image_delete"
                 android:layout_width="25dp"
                 android:layout_height="25dp"
-                android:layout_alignParentTop="true"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="3dp"
-                android:layout_marginEnd="40dp"
-                android:layout_marginRight="15dp"
-                android:scaleType="fitCenter"
-                android:background="@drawable/delete"
+                android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="true"
-                android:layout_alignParentEnd="true" />
+                android:layout_alignParentBottom="true"
+                android:layout_marginEnd="37dp"
+                android:layout_marginRight="37dp"
+                android:background="@drawable/delete"
+                android:scaleType="fitCenter" />
         </RelativeLayout>
 
     </android.support.v7.widget.CardView>

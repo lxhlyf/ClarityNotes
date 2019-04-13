@@ -116,7 +116,10 @@ public class CharacterUtils {
         if (!isEdit) {
 
             //把当前项的 默认 展示数据删除
+            if (dataList.get(characterPosstion).getCiGenLists().get(ciGenPostion).getTranslation().equals("请输入词根的含义")){
 
+                dataList.remove(0);
+            }
 
             //添加状态
             for (int i = 0; i < dataList.size(); i++) {
@@ -495,9 +498,15 @@ public class CharacterUtils {
 
         dataList.get(characterPosition).getCiGenLists().remove(ciGenPostion);
 
-        if (CharaterListHelper.deleteAll(Constant.CHARACTER_KEY))
-            CharaterListHelper.save(Constant.CHARACTER_KEY, dataList);
+        if (dataList.get(characterPosition).getCiGenLists().size() <= 0){
 
+            CiGenList ciGenListItem = new CiGenList("-" + dataList.get(characterPosition).getCharactor() + "开头的词根", "请输入词根的含义", DateUtils.toDateStr(new Date()));
+            dataList.get(characterPosition).setCiGenLists(ciGenListItem);
+        }else {
+
+            if (CharaterListHelper.deleteAll(Constant.CHARACTER_KEY))
+                CharaterListHelper.save(Constant.CHARACTER_KEY, dataList);
+        }
         return dataList;
     }
 

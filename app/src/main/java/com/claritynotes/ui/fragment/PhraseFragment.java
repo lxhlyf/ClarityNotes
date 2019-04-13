@@ -184,8 +184,12 @@ public class PhraseFragment extends BaseFragment {
 
             holder.itemView.setOnClickListener(v -> {
 
-                //跳转到短语列表中去
+                if (phraseTranslationItems.get(i).getTranslation().equals("请输入短语的意思")) {
+                    UIUtils.showToast("请点击右上角添加新的数据");
+                    return;
+                }
 
+                //跳转到短语列表中去
                 Intent intent = new Intent(mActivity, PhraseWordsListDetailActivity.class);
                 Bundle bundle = new Bundle();
                 bundle.putString("title", "短语列表");
@@ -197,6 +201,11 @@ public class PhraseFragment extends BaseFragment {
             });
 
             holder.itemView.setOnLongClickListener(v -> {
+
+                if (phraseTranslationItems.get(i).getTranslation().equals("请输入短语的意思")) {
+                    UIUtils.showToast("请点击右上角添加新的数据");
+                    return true;
+                }
 
                 itemPosition = i;
                 //Log.e("itemPosition", ""+itemPosition);

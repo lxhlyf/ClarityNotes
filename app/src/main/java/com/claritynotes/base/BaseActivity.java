@@ -17,9 +17,11 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.afollestad.appthemeenginesample.R;
 import com.claritynotes.model.event.WordsRefreshEvent;
+import com.claritynotes.ui.activity.MainActivity;
 import com.claritynotes.ui.fragment.WordsFragment;
 import com.claritynotes.utils.UIUtils;
 
@@ -44,6 +46,8 @@ public abstract class BaseActivity extends BaseThemedActivity {
     private Unbinder unbinder;
 
     private Activity currentActivity;
+
+    private static long mPreTime = 0;
 
     private LinkedList mActiviitys = new LinkedList();
 
@@ -145,6 +149,21 @@ public abstract class BaseActivity extends BaseThemedActivity {
         }
     }
 
+    /**
+     * 统一退出控制
+     */
+    @Override
+    public void onBackPressed() {
+        if (currentActivity instanceof MainActivity) {
+            //如果是主页面
+            if (System.currentTimeMillis() - mPreTime > 2000) {// 两次点击间隔大于2秒
+                Toast.makeText(this, "再按一次，退出应用", Toast.LENGTH_SHORT).show();
+                mPreTime = System.currentTimeMillis();
+                return;
+            }
+        }
+        super.onBackPressed();
+    }
 
     @Override
     protected void onDestroy() {

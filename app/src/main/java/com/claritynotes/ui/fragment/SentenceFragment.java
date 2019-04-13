@@ -173,6 +173,12 @@ public class SentenceFragment extends BaseFragment {
 
             holder.itemView.setOnClickListener(v -> {
 
+                if (sentenceAuthorSources.get(i).getAuthor().equals("名句的作者")){
+
+                    UIUtils.showToast("请点击右上角添加新的数据");
+                    return;
+                }
+
                     Intent intent = new Intent(mActivity, SentenceListActivity.class);
                     Bundle bundle = new Bundle();
                     bundle.putString("source", sentenceAuthorSources.get(i).getSource());
@@ -182,6 +188,12 @@ public class SentenceFragment extends BaseFragment {
             });
 
             holder.itemView.setOnLongClickListener(v -> {
+
+                if (sentenceAuthorSources.get(i).getAuthor().equals("名句的作者")){
+
+                    UIUtils.showToast("请点击右上角添加新的数据");
+                    return true;
+                }
 
                 itemPosition = i;
                 editDataDialog(true);

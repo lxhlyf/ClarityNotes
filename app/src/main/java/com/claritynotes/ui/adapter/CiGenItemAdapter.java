@@ -80,7 +80,10 @@ public class CiGenItemAdapter extends RecyclerView.Adapter<CiGenItemAdapter.MyVi
 
         holder.itemView.setOnClickListener(v -> {
 
-            //ArrayList<PhraseWordsListByCharacter> phraseWordsList = mCharactorList.getCiGenLists().get(i).getPhraseWordsList();
+            if (mCharactorList.getCiGenLists().get(i).getTranslation().equals("请输入词根的含义")){
+                UIUtils.showToast("请点击右上角添加新的数据");
+                return;
+            }
 
             //跳转到单词详情页上去
             Intent intent = new Intent(mContext, PhraseWordsListDetailActivity.class);
@@ -94,6 +97,12 @@ public class CiGenItemAdapter extends RecyclerView.Adapter<CiGenItemAdapter.MyVi
         });
 
         holder.itemView.setOnLongClickListener(v -> {
+
+            if (mCharactorList.getCiGenLists().get(i).getTranslation().equals("请输入词根的含义")){
+                UIUtils.showToast("请点击右上角添加新的数据");
+                return true;
+            }
+
             WordsRefreshEvent event = new WordsRefreshEvent();
             event.setCiGenPostion(i);
             event.setCharacterPosition(position);

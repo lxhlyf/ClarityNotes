@@ -120,6 +120,11 @@ public class SentenceListActivity extends BaseThemedActivity implements ATEActiv
 
             holder.itemView.setOnClickListener(v -> {
 
+                if (sentenceItems.get(i).getBookSource().equals("刘一峰")){
+                    UIUtils.showToast("请点击右上角添加新的数据");
+                    return;
+                }
+
                 itemPosition = i;
                 editDataDialog(true);
             });
@@ -217,13 +222,11 @@ public class SentenceListActivity extends BaseThemedActivity implements ATEActiv
 
         EditText mInputSentence = view.findViewById(R.id.dialog_edit_sentence);
         EditText mInputBookSource = view.findViewById(R.id.dialog_edit_book_source);
-        //EditText mInputRecordTime = view.findViewById(R.id.dialog_edit_record_time);
 
         if (itemPosition != -1){
 
             mInputSentence.setText(sentenceItems.get(itemPosition).getSentence());
             mInputBookSource.setText(sentenceItems.get(itemPosition).getBookSource());
-            //mInputRecordTime.setText(sentenceItems.get(itemPosition).getRecordTime());
         }
 
         //谈一个弹框，提示用户输入新增加的词根
