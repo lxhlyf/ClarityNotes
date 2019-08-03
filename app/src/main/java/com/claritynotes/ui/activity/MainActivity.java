@@ -126,6 +126,7 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
         //unregisterEventBus(this);
     }
 
+    //作用就是调用父类的
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         return super.onCreateOptionsMenu(menu);

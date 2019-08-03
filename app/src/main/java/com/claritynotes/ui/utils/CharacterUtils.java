@@ -84,25 +84,12 @@ public class CharacterUtils {
      * @param translation
      * @param dataList
      * @param isEdit
-     * @param ciGenPostion
-     * @param characterPosstion
+     * @param ciGenPostion    这个是-1
+     * @param characterPosstion  如果是添加这个是0
      * @return
      */
     public static List<CharactorList> upDateCiGenItem(String ciGen, String translation, List<CharactorList> dataList, boolean isEdit, int ciGenPostion, int characterPosstion) {
 
-        if (TextUtils.isEmpty(ciGen)) {
-            //如果相等就进行修改，如果不相等就提示用户
-            dataList.get(characterPosstion).getCiGenLists().get(ciGenPostion).setCiGen(ciGen);
-            dataList.get(characterPosstion).getCiGenLists().get(ciGenPostion).setTranslation(translation);
-            return dataList;
-        }
-
-        if (ciGen.equals("-")) {
-
-            dataList.get(characterPosstion).getCiGenLists().get(ciGenPostion).setCiGen(null);
-            dataList.get(characterPosstion).getCiGenLists().get(ciGenPostion).setTranslation(translation);
-            return dataList;
-        }
         String captialLetter;
         int index = ciGen.indexOf('-');
         if (index == 0) {
@@ -111,21 +98,43 @@ public class CharacterUtils {
 
             captialLetter = ciGen.substring(0, 1).toUpperCase();
         }
+
+
+
+//        if (!TextUtils.isEmpty(ciGen)) {
+//            //如果相等就进行修改，如果不相等就提示用户
+//            dataList.get(characterPosstion).getCiGenLists().get(ciGenPostion).setCiGen(ciGen);
+//            dataList.get(characterPosstion).getCiGenLists().get(ciGenPostion).setTranslation(translation);
+//            return dataList;
+//        }
+
+//        if (ciGen.equals("-")) {
+//
+//            dataList.get(characterPosstion).getCiGenLists().get(ciGenPostion).setCiGen(null);
+//            dataList.get(characterPosstion).getCiGenLists().get(ciGenPostion).setTranslation(translation);
+//            return dataList;
+//        }
+
         String characterTemp;
         boolean isHave = false;
         if (!isEdit) {
 
             //把当前项的 默认 展示数据删除
-            if (dataList.get(characterPosstion).getCiGenLists().get(ciGenPostion).getTranslation().equals("请输入词根的含义")){
-
-                dataList.remove(0);
-            }
+//            if (dataList.get(characterPosstion).getCiGenLists().get(0).getTranslation().equals("请输入词根的含义")){
+//
+//                dataList.get(characterPosstion).getCiGenLists().remove(0);
+//            }
 
             //添加状态
             for (int i = 0; i < dataList.size(); i++) {
 
                 characterTemp = dataList.get(i).getCharactor();
                 if (characterTemp.equals(captialLetter)) {
+
+                    if (characterPosstion == 0){
+
+                        characterPosstion = i;
+                    }
 
                     if (dataList.get(characterPosstion).getCiGenLists().get(0).getTranslation().equals("请输入词根的含义")) {
 

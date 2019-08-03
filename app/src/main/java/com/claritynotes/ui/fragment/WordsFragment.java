@@ -330,6 +330,7 @@ public class WordsFragment extends BaseFragment {
             UIUtils.showToast("请添加数据");
             return;
         }
+
         dataList = CharacterUtils.upDateCiGenItem(inputAdress.getText().toString(), mInputTranslation.getText().toString(), dataList, isEdit, ciGenPostion, characterPosition);
         wordsAdapter.notifyChangeAll();
         ciGenPostion = -1;
