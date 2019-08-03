@@ -21,13 +21,13 @@ ClarityNotes客户端,是我的一个练手的习作，其中采用了litepel以
 
 
 ## Screenshots
-![](screencut/sc1.png)
-![](screencut/sc2.png)
-![](screencut/sc3.png)
-![](screencut/sc4.png)
-![](screencut/sc5.png)
-![](screencut/sc6.png)
-![](screencut/sc7.png)
+![](screencut/sc1.jpg)
+![](screencut/sc2.jpg)
+![](screencut/sc3.jpg)
+![](screencut/sc4.jpg)
+![](screencut/sc5.jpg)
+![](screencut/sc6.jpg)
+![](screencut/sc7.jpg)
 
 ## Preview
 ![](art/preview.gif)
